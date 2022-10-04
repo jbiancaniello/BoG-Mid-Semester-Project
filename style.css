@@ -1,0 +1,46 @@
+.leftSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.photoBox {
+    border: solid;
+    margin-bottom: 20px;
+}
+
+.name {
+    border: solid;
+    padding: 20px;
+    background-color: gray;
+    color: white;
+}
+
+.center{
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 30px;
+}
+
+.stats {
+    border: solid;
+    size: 50px 20px;
+    padding: 20px;
+    background-color: gray;
+    color: white;
+}
