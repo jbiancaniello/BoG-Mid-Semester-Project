@@ -1,20 +1,18 @@
 const apiURL = "https://pokeapi.co/api/v2/pokemon/";
-let id = 1;
+let id = 3;
 
 async function getPokemon() {
     const response = await fetch(apiURL + id);
     const data = await response.json();
-    const pokemon = data => {
-        name: data.name;
-    }
+    getPhoto();
+    setName(data);
 }
 
 document.getElementById("prevButton").addEventListener("click", () => {
     if (id > 1 || id < 905) { //fix this
         id--;
         document.getElementById("prevButton").textContent = id;
-        const data = getPokemon();
-        getPhoto();
+        getPokemon();
     }
 });
 
@@ -23,5 +21,5 @@ function getPhoto() {
 }
 
 function setName(data) {
-    document.getElementById("nameBox").textContent = data['name'];
+    document.getElementById("textBox").textContent = data.name;
 }
