@@ -9,14 +9,14 @@ async function getPokemon() {
 }
 
 document.getElementById("prevButton").addEventListener("click", () => {
-    if (id > 1 || id < 905) { //fix this
+    if (id > 1 & id < 905) {
         id--;
         getPokemon();
     }
 });
 
 document.getElementById("nextButton").addEventListener("click", () => {
-    if (id > 1 || id < 905) { //fix this
+    if (id > 1 & id < 905) {
         id++;
         getPokemon();
     }
