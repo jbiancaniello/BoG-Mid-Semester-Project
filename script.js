@@ -1,5 +1,7 @@
 const apiURL = "https://pokeapi.co/api/v2/pokemon/";
 let id = 1;
+let info = "";
+let moves = "";
 
 async function getPokemon() {
     const response = await fetch(apiURL + id);
@@ -7,6 +9,9 @@ async function getPokemon() {
     setPhoto();
     setName(data);
     setTypes(data);
+    getInfo(data);
+    getMoves(data);
+    setInfo();
 }
 
 document.getElementById("prevButton").addEventListener("click", () => {
@@ -40,3 +45,41 @@ function setTypes(data) {
     }
     document.getElementById("types").textContent = curr;
 }
+
+function getInfo(data) {
+    let height = data.height / 10;
+    let weight = data.weight;
+    let curr = "height: " + height + "m<br>" + "weight: " + weight + "kg<br>";
+    for (let i = 0; i < data.stats.length; i++) {
+        curr = curr + " " + data.stats[i].stat.name + ": " + data.stats[i].base_stat + "<br>";
+    }
+    info = curr;
+}
+
+function setInfo() {
+    document.getElementById("infoBox").innerHTML = info;
+}
+
+function getMoves(data) {
+    let curr = "";
+    for (let i = 0; i < data.moves.length; i++) {
+        curr = curr + " " + data.moves[i].move.name + "<br>";
+    }
+    moves = curr;
+}
+
+function setMoves() {
+    document.getElementById("infoBox").innerHTML = moves;
+}
+
+document.getElementById("infoButton").addEventListener("click", () => {
+    document.getElementById("infoButton").style.backgroundColor = "4FFF33";
+    document.getElementById("movesButton").style.backgroundColor = "E3E3E3";
+    setInfo()
+});
+
+document.getElementById("movesButton").addEventListener("click", () => {
+    document.getElementById("movesButton").style.backgroundColor = "4FFF33";
+    document.getElementById("infoButton").style.backgroundColor = "E3E3E3";
+    setMoves();
+});
