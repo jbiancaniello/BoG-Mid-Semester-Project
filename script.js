@@ -58,6 +58,8 @@ function getInfo(data) {
 
 function setInfo() {
     document.getElementById("infoBox").innerHTML = info;
+    document.getElementById("infoButton").style.backgroundColor = "4FFF33";
+    document.getElementById("movesButton").style.backgroundColor = "E3E3E3";
 }
 
 function getMoves(data) {
@@ -69,17 +71,15 @@ function getMoves(data) {
 }
 
 function setMoves() {
+    document.getElementById("movesButton").style.backgroundColor = "4FFF33";
+    document.getElementById("infoButton").style.backgroundColor = "E3E3E3";
     document.getElementById("infoBox").innerHTML = moves;
 }
 
 document.getElementById("infoButton").addEventListener("click", () => {
-    document.getElementById("infoButton").style.backgroundColor = "4FFF33";
-    document.getElementById("movesButton").style.backgroundColor = "E3E3E3";
     setInfo()
 });
 
 document.getElementById("movesButton").addEventListener("click", () => {
-    document.getElementById("movesButton").style.backgroundColor = "4FFF33";
-    document.getElementById("infoButton").style.backgroundColor = "E3E3E3";
     setMoves();
 });
