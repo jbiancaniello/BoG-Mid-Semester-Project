@@ -83,6 +83,7 @@
     height: 598px;
     font-size: 36px;
     padding-left: 33px;
+    overflow: scroll;
     background-color: #E8E8E8;
 }
 
