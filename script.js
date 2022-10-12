@@ -40,10 +40,17 @@ function setName(data) {
 
 function setTypes(data) {
     let curr = "";
+
     for (let i = 0; i < data.types.length; i++) {
-        curr = curr + " " + data.types[i].type.name;
+        //curr = curr + " " + data.types[i].type.name;
+        curr = curr + " <p id=" + data.types[i].type.name + ">" + data.types[i].type.name + "</p>";
     }
-    document.getElementById("types").textContent = curr;
+
+
+
+    document.getElementById("types").innerHTML = curr;
+
+
 }
 
 function getInfo(data) {
@@ -58,8 +65,9 @@ function getInfo(data) {
 
 function setInfo() {
     document.getElementById("infoBox").innerHTML = info;
-    document.getElementById("infoButton").style.backgroundColor = "4FFF33";
-    document.getElementById("movesButton").style.backgroundColor = "E3E3E3";
+    document.getElementById("infoButton").style.backgroundColor = "7CFF79";
+    document.getElementById("movesButton").style.backgroundColor = "E8E8E8";
+    document.getElementById("rightLabel").textContent = "Info";
 }
 
 function getMoves(data) {
@@ -71,9 +79,10 @@ function getMoves(data) {
 }
 
 function setMoves() {
-    document.getElementById("movesButton").style.backgroundColor = "4FFF33";
-    document.getElementById("infoButton").style.backgroundColor = "E3E3E3";
+    document.getElementById("movesButton").style.backgroundColor = "7CFF79";
+    document.getElementById("infoButton").style.backgroundColor = "E8E8E8";
     document.getElementById("infoBox").innerHTML = moves;
+    document.getElementById("rightLabel").textContent = "Moves";
 }
 
 document.getElementById("infoButton").addEventListener("click", () => {
